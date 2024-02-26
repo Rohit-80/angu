@@ -1,0 +1,39 @@
+
+
+
+<div class="main">
+ <div class="center">
+  <button mat-stroked-button color="primary" (click)="startBtn()" >Start</button>
+  <button mat-stroked-button color="accent" (click)="stopBtn()">Stop</button>
+  <button mat-stroked-button color="warn" (click)="resetBtn()">Reset</button>
+</div>
+<div class="center">
+  <div id="board" class="center board"
+        [style]="{
+       'background-color' : 'lightblue',
+        height : EHeight + 'px',
+        width : EWidth + 'px'
+      }"
+  >
+ <app-food
+
+ [SHeight]="SHeight"
+ [EHeight]="EHeight"
+ [SWidth]="SWidth"
+ [EWidth]="EWidth"
+
+ > </app-food>
+ <app-snake
+    [SHeight]="SHeight"
+    [EHeight]="EHeight"
+    [SWidth]="SWidth"
+    [EWidth]="EWidth"
+ >
+ </app-snake>
+</div>
+</div>
+
+ <h1 class="center"> Score - {{ Score }}</h1>
+</div>
+
+

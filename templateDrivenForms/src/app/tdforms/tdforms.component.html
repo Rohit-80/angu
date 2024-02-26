@@ -1,0 +1,83 @@
+
+<!-- <button (click)="c()"> {{value}} </button> -->
+<div id="form">
+<form #tdform = "ngForm" (ngSubmit)="handleSubmit(tdform)"  >
+    <div>
+        <label> Firstname </label>
+        <input type="text" name="firstname" ngModel required minlength="3">
+
+        <!-- <small *ngIf="!reactiveForm.get('firstname')?.valid && reactiveForm.get('firstname')?.touched" > *First name required</small> -->
+        <small *ngIf=" !tdform.form.controls['firstname']?.valid &&  tdform.form.controls['firstname']?.touched " > *First name required</small>
+        <!-- <small *ngIf="!reactiveForm.get('firstname')?.valid && reactiveForm.get('firstname')?.errors?.['minlength']?.requiredLength" > Min length</small> -->
+        <small *ngIf=" !tdform.form.controls['firstname']?.valid &&  tdform.form.controls['firstname']?.errors?.['minlength']?.requiredLength " > *Min Length required</small>
+    </div>
+
+    <div>
+        <label> Lastname </label>
+        <input type="text" name="lastname" ngModel>
+    </div>
+
+    <div>
+        <label> Email </label>
+        <input type="text" name="email" ngModel>
+    </div>
+
+    <div>
+        <label> Username </label>
+        <input type="text" name="username" ngModel>
+    </div>
+
+    <div>
+        <label> Gender </label>
+         <input type="radio" name="gender" value="male" name="gender" ngModel> <label> Male </label>
+         <input type="radio" name="gender" value="female" name="gender" ngModel > <label> Female </label>
+    </div>
+
+    <div>
+        <label for="country"> Country</label>
+        <select id="country" name="country" style="font-size: 1rem; width: 5rem;" name="country" ngModel > Country
+         <option value="Ind"> Ind </option>
+         <option value="NZ"> NZ  </option>
+         <option value="Aus"> Aus </option>
+        </select>
+    </div>
+
+    <div ngModelGroup="address">
+        <label for="country"> Address </label>
+        <label for="">  </label>
+        <input type="text" placeholder="street" name="street" ngModel>
+        <!-- <small *ngIf="!reactiveForm.get('address.street')?.valid && reactiveForm.get('address.street')?.touched" > *Street name required</small> -->
+        <label for="">  </label>
+        <input type="text" placeholder="Area" name="area" ngModel>
+    </div>
+
+    <!-- <div formArrayName="skills">
+         Skill
+         <div *ngFor="let skill of skillser.controls; index as i"
+        >
+         <input type="text" placeholder="Add skills"  [formControlName]="i" >
+         <button (click)="DeleteSkill(i)"> Delete</button>
+         </div>
+
+
+
+
+       <button (click)="AddSkill()"> Add Skills </button>
+    </div>
+
+
+    <div formArrayName="Experience">
+        <div *ngFor="let exp of Experience.controls; index as i" [formGroupName]="i">
+             <input placeholder="company name" type="text" formControlName="Company">
+             <input placeholder="years" type="text" formControlName="Years">
+             <button (click)="DeleteExperience(i)"> Delete </button>
+        </div>
+        <button (click)="AddExperience()"> AddEducation</button>
+
+     </div> -->
+
+
+
+     <input type="submit" >
+</form>
+</div>

@@ -1,0 +1,23 @@
+<!-- <app-tdforms></app-tdforms> -->
+
+<form #tdform="ngForm" (submit)="onSubmit(tdform)">
+     name <input name="name" ngModel>
+     weight <input name="weight" ngModel>
+
+    <input type="submit" [value]="isupdate ? 'update' : 'submit' ">
+</form>
+
+
+<button (click)="fetchData()">  Fetch </button>
+
+
+ <div *ngFor="let fish of allfish">
+     <h3>{{ fish.name }} and weight is : {{ fish.weight }}
+      <button (click)="UpdateCat(fish.id)"> update </button>
+      <button (click)="DeleteCat(fish.id)"> Delete </button>
+    </h3>
+
+
+ </div>
+
+<router-outlet />

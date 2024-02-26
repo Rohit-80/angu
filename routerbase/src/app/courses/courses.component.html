@@ -1,0 +1,13 @@
+
+
+<div>
+  <p> Home Component</p>
+  <img src="../../assets/courses.jpeg">
+
+  <div *ngFor="let item of Course">
+       <button (click)="handleClick(item.courseId)" > {{ item.courseName  }} {{ item.courseDesc}} </button>
+       <button (click)="BuyNow(item.courseId)" > Buy Now </button>
+  </div>
+
+  <a [routerLink]="'/courses'" [queryParams]="{search : 'Cat1' }"> Cat 1</a>
+</div>

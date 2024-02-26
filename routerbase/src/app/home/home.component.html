@@ -1,0 +1,19 @@
+<div id="home">
+  <div style="justify-content: center;">
+    <p> Home Component</p>
+    <img src="../../assets/home.jpeg">
+    <p> Sheep!! Sheep </p>
+    <button (click)="handleGoto"> Goto Course</button>
+    <br>
+    <input placeholder="search" value="" #searchValue>
+    <!-- <button [routerLink]="'/courses'" [queryParams]="{search :searchValue.value }" > Search </button> -->
+    <button (click)="onSearchValue(searchValue.value)"> Search </button>
+  </div>
+</div>
+
+<div id="desc">
+  <app-description></app-description>
+</div>
+<div id="login">
+  <app-login></app-login>
+</div>

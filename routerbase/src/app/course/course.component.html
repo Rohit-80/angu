@@ -1,0 +1,9 @@
+<div>
+   <h3> {{ mycourse.courseName }}</h3>
+   <img [src]="mycourse.courseLogo">
+
+  <p> {{mycourse.courseDesc }}</p>
+
+   <button [routerLink]="'../' +(+mycourse.courseId-1)" > Prev </button>
+   <button [routerLink]="'../' +(+mycourse.courseId+1)" > Next </button>
+</div>

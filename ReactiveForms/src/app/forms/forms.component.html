@@ -1,0 +1,81 @@
+
+<button (click)="c()"> {{value}} </button> 
+<div id="form"> 
+<form [formGroup]="reactiveForm" (ngSubmit) ="onSubmit()" >
+    <div>
+        <label> Firstname </label>
+        <input type="text" formControlName="firstname">
+     
+        <small *ngIf="!reactiveForm.get('firstname')?.valid && reactiveForm.get('firstname')?.touched" > *First name required</small>
+        <small *ngIf="!reactiveForm.get('firstname')?.valid && reactiveForm.get('firstname')?.errors?.['minlength']?.requiredLength" > Min length</small>
+    </div>
+
+    <div>
+        <label> Lastname </label>
+        <input type="text" formControlName="lastname">
+    </div>
+
+    <div>
+        <label> Email </label>
+        <input type="text" formControlName="email" >
+    </div>
+
+    <div>
+        <label> Username </label>
+        <input type="text" formControlName="username">
+    </div>
+
+    <div>
+        <label> Gender </label>         
+         <input type="radio" name="gender" value="male" formControlName="gender"> <label> Male </label>
+         <input type="radio" name="gender" value="female" formControlName="gender" > <label> Female </label>
+    </div>
+
+    <div>
+        <label for="country"> Country</label>
+        <select id="country" name="country" style="font-size: 1rem; width: 5rem;" formControlName="country" > Country
+         <option value="Ind"> Ind </option>
+         <option value="NZ"> NZ  </option>
+         <option value="Aus"> Aus </option>
+        </select>         
+    </div>
+ 
+    <div formGroupName="address"> 
+        <label for="country"> Address </label>
+        <label for="">  </label>
+        <input type="text" placeholder="street" formControlName="street"> 
+        <small *ngIf="!reactiveForm.get('address.street')?.valid && reactiveForm.get('address.street')?.touched" > *Street name required</small>
+        <label for="">  </label>
+        <input type="text" placeholder="Area" formControlName="area"> 
+    </div>
+    
+    <div formArrayName="skills"> 
+         Skill
+         <div *ngFor="let skill of skillser.controls; index as i"
+        > 
+         <input type="text" placeholder="Add skills"  [formControlName]="i" >
+         <button (click)="DeleteSkill(i)"> Delete</button>
+         </div>
+         
+         
+       
+
+       <button (click)="AddSkill()"> Add Skills </button>
+    </div>
+
+      
+    <div formArrayName="Experience">
+        <div *ngFor="let exp of Experience.controls; index as i" [formGroupName]="i">
+             <input placeholder="company name" type="text" formControlName="Company"> 
+             <input placeholder="years" type="text" formControlName="Years"> 
+             <button (click)="DeleteExperience(i)"> Delete </button>
+        </div>
+        <button (click)="AddExperience()"> AddEducation</button>
+
+     </div>
+   
+
+
+     <input type="submit" > 
+</form>
+</div>

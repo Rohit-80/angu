@@ -1,0 +1,17 @@
+
+<div style="width: 50%; margin: 0 auto;">
+  <h1> Login</h1>
+
+  <fieldset>
+    <legend>User </legend>
+     <input #usernameref value="" >
+   </fieldset>
+
+   <fieldset>
+    <legend>Password</legend>
+     <input #passwordref value="" >
+   </fieldset>
+
+   <button (click)="OnSubmit(usernameref.value,passwordref.value)"> Submit </button>
+
+</div>

@@ -1,0 +1,31 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#form{
+   width: 100%;
+   height: auto;
+   text-align: center;
+   margin: 5rem 0;
+}
+
+
+input{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-family: Verdana;
+}
+small{
+    display: block;
+    font-weight: 900;
+    color: red;
+}
+
+input.ng-invalid.ng-touched{
+  border: 5px red solid;
+}
+input.ng-pending{
+    border: 6px yellow solid;
+}

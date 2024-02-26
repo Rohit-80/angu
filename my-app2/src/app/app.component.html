@@ -1,0 +1,23 @@
+<h1>
+  Hi I am papa.
+</h1>
+
+<app-newcomp  [papaValue]="papaValue" (totalOut)="call($event)" > </app-newcomp>
+
+
+
+
+<div>
+  <div direct >
+    Directives
+  </div>
+</div>
+
+
+<button (click)="unsubs()"> unsubs </button>
+
+<app-third> </app-third>
+<div > </div>
+
+<!-- <div (totalOut)="call()" > ok </div> -->
+<router-outlet />
